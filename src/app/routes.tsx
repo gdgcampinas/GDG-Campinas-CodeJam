@@ -1,8 +1,9 @@
 import type { AppRoute } from '@/core/types/AppRoute'
 import { mapRoutes } from '@/features/map/routes'
 import { petsRoutes } from '@/features/pets/routes'
+import { registerPetRoutes } from '@/features/register-pet/routes'
 
-export const appRoutes: AppRoute[] = [...petsRoutes, ...mapRoutes]
+export const appRoutes: AppRoute[] = [...petsRoutes, ...mapRoutes, ...registerPetRoutes]
 
 export const navItems = appRoutes
   .filter((r) => r.nav)
