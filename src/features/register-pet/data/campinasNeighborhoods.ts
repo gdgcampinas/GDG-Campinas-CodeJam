@@ -1,8 +1,4 @@
-import type { GeoPoint } from '@/core/utils/geo'
-
-export interface Neighborhood extends GeoPoint {
-  name: string
-}
+import type { Neighborhood } from '../domain/Neighborhood'
 
 export const CAMPINAS_NEIGHBORHOODS: Neighborhood[] = [
   { name: 'Cambuí', lat: -22.8967, lng: -47.0503 },

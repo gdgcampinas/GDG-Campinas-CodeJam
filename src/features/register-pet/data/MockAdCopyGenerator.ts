@@ -1,4 +1,5 @@
 import { delay } from '@/core/utils/delay'
+import { PET_SIZE_LABEL } from '@/features/pets/domain/petMeta'
 import type { AdCopyGenerator, AdCopyParams } from '../domain/AdCopyGenerator'
 
 export class MockAdCopyGenerator implements AdCopyGenerator {
@@ -19,7 +20,7 @@ export class MockAdCopyGenerator implements AdCopyGenerator {
     }
 
     if (status === 'abandoned') {
-      return `Pet resgatado precisando de acolhimento: ${petName}, um(a) ${analysis.breed} (${analysis.size === 'small' ? 'porte pequeno' : analysis.size === 'medium' ? 'porte médio' : 'porte grande'}). Encontrado precisando de cuidados. É ${traitsText}. Ajude a encontrar o tutor ou um lar temporário!`
+      return `Pet resgatado precisando de acolhimento: ${petName}, um(a) ${analysis.breed} (porte ${PET_SIZE_LABEL[analysis.size].toLowerCase()}). Encontrado precisando de cuidados. É ${traitsText}. Ajude a encontrar o tutor ou um lar temporário!`
     }
 
     // adoption / adopted
